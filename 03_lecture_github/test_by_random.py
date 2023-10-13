@@ -1,26 +1,17 @@
 from random import randint
-
 print("Welcome to game for that who is today's choiced")
-
 print()
 class_members = int(input("Please enter a number of class members: "))
-
 this_class = [int(x) for x in range(1, class_members + 1)]
 # this_class_a = []
 # for member in range(1, class_members + 1):
-#
 #     this_class_a.append(int(clas))
-
-
-
 # print(','.join([str(x) for x in range(1, 31)]))
 # sick_students = input('Please enter a sick Students in the following format: 11, 22,: ')
 today_sick = [int(x) for x in input('Please enter a sick Students in the following format: 11, 22,: ').split(', ')]
 for sick in today_sick:
     if sick in this_class:
         this_class.remove(sick)
-
-
 flag = False
 while this_class:
     print()
@@ -37,7 +28,6 @@ while this_class:
         print("Your choice must be 'YES' or 'NO'")
         continue
     computer_choice = randint(1, class_members)
-
     if computer_choice not in this_class:
         continue
     else:
@@ -47,6 +37,3 @@ while this_class:
     print(f"The student that will be tested now is: {computer_choice}")
     print(f"Left students for testing are: ")
     print(', '.join(str(x) for x in this_class))
-
-
-
