@@ -1,37 +1,11 @@
-bites = int(input())
 
-names = []
+names = input().split()
+n = int(input())
 
-inputs = []
+index_to_remove = (n - 1) % len(names)
+while len(names) != 1:
+    name = names.pop(index_to_remove)
+    print(f'Removed {name}')
+    index_to_remove = (index_to_remove + n - 1) % len(names)
 
-while True:
-    user_input = input()
-    if user_input == "Start":
-        break
-    else:
-        names.append(user_input)
-
-while True:
-    user_input = input()
-    if user_input == "End":
-        break
-    else:
-        inputs.append(user_input)
-
-
-for list_input in inputs:
-    if "refill" in list_input:
-        split_input = list_input.split()
-        bites = bites + int(split_input[1])
-    elif list_input == "End":
-        break
-    else:
-        if bites >= int(list_input):
-            bites = bites - int(list_input)
-            name = names.pop(0)
-            print(f'{name} take bites')
-        else:
-            name = names.pop(0)
-            print(f'{name} must wait')
-
-print(f'{bites} bites left')
+print(f'Last is {names[0]}')

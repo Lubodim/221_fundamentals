@@ -8,7 +8,7 @@ customer = ""
 
 while customer != "END":
 
-    customer = input("Enter customer name(or ‘END’ for the last people in the line): ")
+    customer = input()
 
     # Докато човека не напише End конзолата работи ,но ако е въведено End конзолата спира и пише това ,което и е било зададено до момента
 
