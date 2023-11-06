@@ -4,7 +4,7 @@ num2 = int(input("Enter the second number: "))
 operators = input("choice the operator from '+, -, *, /, //, %, **': ")
 
 
-# print(calc(num1, num2, operators))
+print(calc(num1, num2, operators))
 print(calc_2(num1, num2, operators))
 
 
