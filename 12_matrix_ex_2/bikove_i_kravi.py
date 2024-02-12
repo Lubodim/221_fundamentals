@@ -9,10 +9,10 @@ player_2_num = "".join(str(x) for x in sample(numbers, 4))
 
 print(player_1_num)
 print(player_2_num)
+help_list = []
 while True:
-
     gues = input(f"{player_1_name.upper()} must enter a gues number: ")
-
+    print()
     if gues == player_2_num:
         print(f"Result for {player_1_name.upper()} gueses: ")
         print(("Бик \n" * 4))
@@ -22,15 +22,17 @@ while True:
     for i, ch in enumerate(player_2_num):
         for j, c in enumerate(gues):
             if c == ch and i == j:
-                print("Бик")
+                help_list.append("Бик")
             elif c == ch:
-                print("Крава")
+                help_list.append("Крава")
+        if "Крава" in help_list and "Бик" in help_list:
+            print("Бик")
 
+        else:
+            if help_list:
+                print(*help_list, sep="\n")
+        help_list.clear()
     print()
 
     player_1_name, player_2_name = player_2_name, player_1_name
     player_1_num, player_2_num = player_2_num, player_1_num
-
-# ml = ["a", "b", "c", "d", "e", "f"]
-# for j, c in enumerate(ml):
-#     print(f"index - {j} element {c}")
